@@ -1,4 +1,4 @@
-import { server } from "@/mocks/node";
+import { server } from "@/__mocks__/node";
 import "@testing-library/jest-dom";
 
 // Start server before all tests
