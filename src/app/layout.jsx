@@ -1,6 +1,8 @@
+import "@mantine/core/styles.css";
 import localFont from "next/font/local";
 import "./globals.css";
 import QueryClientProvider from "@/store/QueryClientProvider";
+import { MantineProvider } from "@mantine/core";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +26,9 @@ export default function RootLayout({ children }) {
       <body
         className={`dark ${geistSans.variable} ${geistMono.variable} antialiased h-svh`}
       >
-        <QueryClientProvider>{children}</QueryClientProvider>
+        <QueryClientProvider>
+          <MantineProvider>{children}</MantineProvider>
+        </QueryClientProvider>
       </body>
     </html>
   );

@@ -1,8 +1,8 @@
 "use client";
 
+import { Loader } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Spinner } from "flowbite-react";
 import { useParams } from "next/navigation";
 
 const UserDetail = () => {
@@ -18,7 +18,7 @@ const UserDetail = () => {
   });
   const { email } = data;
 
-  if (isLoading) return <Spinner aria-label="user-loading" />;
+  if (isLoading) return <Loader aria-label="user-loading" />;
   if (error) return <h1>Internal server error</h1>;
 
   return (
